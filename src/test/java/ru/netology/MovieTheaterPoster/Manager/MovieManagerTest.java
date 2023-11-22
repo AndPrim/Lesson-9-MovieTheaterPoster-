@@ -7,17 +7,17 @@ import ru.netology.MovieTheaterPoster.MovieTheaterPoster;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MovieManagerTest {
-    MovieTheaterPoster item1 = new MovieTheaterPoster(1, "Всех побьем", "23/11/23", "Боевик",5);
+    MovieTheaterPoster item1 = new MovieTheaterPoster(1, "Всех побьем", "23/11/23", "Боевик", 5);
     MovieTheaterPoster item2 = new MovieTheaterPoster(2, "Всех полюбим", "24/11/23", "Эротика", 5);
-    MovieTheaterPoster item3 = new MovieTheaterPoster(3, "Всех убьем", "25/11/23", "Триллер",5);
+    MovieTheaterPoster item3 = new MovieTheaterPoster(3, "Всех убьем", "25/11/23", "Триллер", 5);
 
-    MovieTheaterPoster item4 = new MovieTheaterPoster(4, "Всех найдем", "26/11/23", "Детектив",5);
-    MovieTheaterPoster item5 = new MovieTheaterPoster(5, "Всех поженим", "27/11/23", "Мелодрамма",5);
-    MovieTheaterPoster item6 = new MovieTheaterPoster(6, "Всем расскажим", "28/11/23", "Документальный фильм",5);
-    MovieTheaterPoster item7 = new MovieTheaterPoster(7, "Всех обманим", "29/11/23", "Предвыборная речь депутата",5);
+    MovieTheaterPoster item4 = new MovieTheaterPoster(4, "Всех найдем", "26/11/23", "Детектив", 5);
+    MovieTheaterPoster item5 = new MovieTheaterPoster(5, "Всех поженим", "27/11/23", "Мелодрамма", 5);
+    MovieTheaterPoster item6 = new MovieTheaterPoster(6, "Всем расскажим", "28/11/23", "Документальный фильм", 5);
+    MovieTheaterPoster item7 = new MovieTheaterPoster(7, "Всех обманим", "29/11/23", "Предвыборная речь депутата", 5);
 
     @Test
-    public void addingMovie(){
+    public void addingMovie() {
         MovieManager repo = new MovieManager();
         repo.save(item1);
         repo.save(item2);
@@ -32,7 +32,7 @@ class MovieManagerTest {
     }
 
     @Test
-    public void recentMovieNormal(){
+    public void recentMovieNormal() {
         MovieManager repo = new MovieManager();
         repo.save(item1);
         repo.save(item2);
@@ -53,7 +53,7 @@ class MovieManagerTest {
     }
 
     @Test
-    public void recentMovieThree(){
+    public void recentMovieThree() {
         MovieManager repo = new MovieManager();
         MovieTheaterPoster post = new MovieTheaterPoster();
         post.setLastFilm(3);
@@ -74,8 +74,9 @@ class MovieManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
-    public void recentMovieSeven(){
+    public void recentMovieSeven() {
         MovieManager repo = new MovieManager();
         MovieTheaterPoster post = new MovieTheaterPoster();
         post.setLastFilm(7);
@@ -90,7 +91,7 @@ class MovieManagerTest {
         repo.save(item2);
         repo.findLast(item1.getLastFilm());
 
-        MovieTheaterPoster[] expected = {item2, item1, item7,item6, item5, item4, item3};
+        MovieTheaterPoster[] expected = {item2, item1, item7, item6, item5, item4, item3};
         MovieTheaterPoster[] actual = repo.findLast(7);
 
         Assertions.assertArrayEquals(expected, actual);

@@ -16,7 +16,7 @@ public class MovieTheaterPoster {
         this.lastFilm = lastFilm;
     }
 
-    public MovieTheaterPoster(int id, String movieTitle, String releaseData, String genreMovie,int lastFilm) {
+    public MovieTheaterPoster(int id, String movieTitle, String releaseData, String genreMovie, int lastFilm) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.releaseData = releaseData;

@@ -21,14 +21,14 @@ public class MovieManager {
     public MovieTheaterPoster[] findLast(int lastFilm) {
         MovieTheaterPoster[] tmp = new MovieTheaterPoster[items.length];
         int fact;
-        if (tmp.length < lastFilm){
+        if (tmp.length < lastFilm) {
             fact = tmp.length;
         } else {
             fact = lastFilm;
         }
         MovieTheaterPoster[] mas = new MovieTheaterPoster[fact];
-        for (int i = 0; i < mas.length; i++){
-            mas [i] = items [items.length - (i + 1)];
+        for (int i = 0; i < mas.length; i++) {
+            mas[i] = items[items.length - (i + 1)];
         }
         return mas;
 
