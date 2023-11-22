@@ -97,4 +97,19 @@ class MovieManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
+    @Test
+    public void recentMovieMini() {
+        MovieManager repo = new MovieManager();
+        repo.save(item1);
+        repo.save(item2);
+        repo.save(item3);
+        repo.findLast(item1.getLastFilm());
+
+        MovieTheaterPoster[] expected = {item3, item2, item1};
+        MovieTheaterPoster[] actual = repo.findLast(5);
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 }
